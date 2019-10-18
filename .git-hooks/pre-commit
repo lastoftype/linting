@@ -1,0 +1,10 @@
+#!/bin/sh
+
+make lint
+
+x=$?
+if [ $x -ne 0 ]; then
+  echo "Cannot complete commit due to pre-commit check errors."
+fi
+
+exit $x
