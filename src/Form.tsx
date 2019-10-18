@@ -1,7 +1,7 @@
 import * as React from 'react';
 
 interface Props {
-  id: string;
+  id: React.Component;
 }
 
 const Form: React.FunctionComponent<Props> = (props: Props) => (
