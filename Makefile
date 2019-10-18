@@ -11,18 +11,11 @@ TS_GLOB="src/**/*.ts{,x}"
 SCSS_GLOB="src/**/*.scss"
 PRETTIER_GLOB="src/**/*.{ts,tsx,json,scss,js}"
 
-.PHONY: clean npm-install run\
-	submodules git-hooks configure npm-install build\
+.PHONY: submodules git-hooks configure build\
 	lint lint-ts lint-css lint-prettier lint-write\
-	build-local build-qa build-stage build-production\
-	run run-local run-qa run-stage run-production\
-	test test-ci integration\
 
 git-hooks:
 	@cp .git-hooks/* .git/hooks/
-
-npm-install: git-hooks
-	@npm install
 
 lint-ts:
 	@echo -e "\n${UNDERLINE}‣ Linting with tslint...${RESET} (Linter 1 of 3)"
