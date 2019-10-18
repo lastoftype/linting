@@ -28,14 +28,14 @@
     "typescript": "^3.6.4"
   },
   "lint-staged": {
+    "src/**/*.{ts,tsx,json,js,jsx,scss,css}": [
+      "prettier --write --config .prettierrc.json"
+    ],
     "src/**/*.{ts,tsx}": [
       "tslint --project tsconfig.json"
     ],
     "src/**/*.scss": [
       "stylelint --config .stylelintrc.json"
-    ],
-    "src/**/*.{ts,tsx,json,js,jsx,scss,css}": [
-      "prettier --check --config .prettierrc.json"
     ]
   },
   "husky": {
