@@ -14,26 +14,28 @@
   },
   "homepage": "https://github.com/lastoftype/linting#readme",
   "dependencies": {
+    "@types/react": "^16.9.9",
     "husky": "^3.0.9",
     "lint-staged": "^9.4.2",
-    "tslint": "^5.20.0",
     "prettier": "^1.18.2",
+    "react": "^16.10.2",
     "stylelint": "^11.1.1",
     "stylelint-config-standard": "^19.0.0",
+    "tslint": "^5.20.0",
     "tslint-config-airbnb": "^5.11.2",
     "tslint-config-prettier": "^1.18.0",
     "tslint-react": "^4.1.0",
     "typescript": "^3.6.4"
   },
   "lint-staged": {
-    "*.{ts,tsx}": [
-      "tslint"
+    "src/**/*.{ts,tsx}": [
+      "tslint --project tsconfig.json"
     ],
-    "*.scss": [
-      "stylelint"
+    "src/**/*.scss": [
+      "stylelint --config .stylelintrc.json"
     ],
-    "*.{ts,tsx,json,js,jsx,scss,css}": [
-      "prettier --check"
+    "src/**/*.{ts,tsx,json,js,jsx,scss,css}": [
+      "prettier --check --config .prettierrc.json"
     ]
   },
   "husky": {
